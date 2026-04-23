@@ -1,0 +1,9 @@
+FROM julia:1.10
+
+WORKDIR /app
+
+COPY client.jl .
+
+RUN julia -e 'using Pkg; Pkg.add("HTTP")'
+
+CMD ["julia", "client.jl"]

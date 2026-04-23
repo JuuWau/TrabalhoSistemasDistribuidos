@@ -1,0 +1,11 @@
+FROM julia:1.10
+
+WORKDIR /app
+
+COPY server.jl .
+
+RUN julia -e 'using Pkg; Pkg.add("HTTP")'
+
+EXPOSE 8080
+
+CMD ["julia", "server.jl"]
