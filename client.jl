@@ -14,7 +14,7 @@ end
 function main()
     threads = []
 
-    for i in 1:2
+    for i in 1:5
         push!(threads, Threads.@spawn comprar())
     end
 
